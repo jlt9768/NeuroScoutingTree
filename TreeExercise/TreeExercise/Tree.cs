@@ -13,5 +13,13 @@ namespace TreeExercise
         {
             get { return root;}
         }
+        public void CreateTree(int depth)
+        {
+            while (depth < 1)
+            {
+                Console.WriteLine("Depth needs to be great than or equal to 1");
+                depth = Convert.ToInt32(Console.ReadLine());
+            }       
+        }
     }
 }

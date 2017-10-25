@@ -18,12 +18,12 @@ namespace TreeExercise
             leftChild = null;
             value = 1;
         }
-        public Node(int value)
+        public Node(Node parent)
         {
-            parent = null;
+            this.parent = parent;
             leftChild = null;
             rightChild = null;
-            this.value = value;
+            value = 1;
         }
         public Node Parent
         {
