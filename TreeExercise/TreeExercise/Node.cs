@@ -25,24 +25,37 @@ namespace TreeExercise
             rightChild = null;
             value = 1;
         }
+        /// <summary>
+        /// Getter and Setter for parent
+        /// </summary>
         public Node Parent
         {
             get { return parent; }
             set { parent = value; }
         }
+        /// <summary>
+        /// Getter and Setter for left
+        /// </summary>
         public Node Left
         {
             get { return leftChild; }
             set { leftChild = value; }
         }
+        /// <summary>
+        /// Getter and Setter for right
+        /// </summary>
         public Node Right
         {
             get { return rightChild; }
             set { rightChild = value; }
         }
+        /// <summary>
+        /// Getter and Setter for parent
+        /// </summary>
         public int Value
         {
             get { return value; }
+            set { this.value = value; }
         }
     }
 }
