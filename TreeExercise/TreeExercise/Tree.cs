@@ -34,6 +34,7 @@ namespace TreeExercise
 
 
             currentLevel.Add(root);
+            Console.WriteLine();
             Console.WriteLine(root.Value);
 
             //Keep track of the last node created to keep track of neighbors
