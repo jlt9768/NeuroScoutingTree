@@ -3,28 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Diagnostics;
 namespace TreeExercise
 {
+    //Line for debugging purposes
+    [DebuggerDisplay("Value = {value}  R = {rightValue} L = {leftValue}")]
     class Node
     {
         private Node parent;
         private Node leftChild;
         private Node rightChild;
         private int value;
-        public Node()
-        {
-            parent = null;
-            leftChild = null;
-            value = 1;
-        }
-        public Node(Node parent)
-        {
-            this.parent = parent;
-            leftChild = null;
-            rightChild = null;
-            value = 1;
-        }
+        private int leftValue;
+        private int rightValue;
+
         /// <summary>
         /// Getter and Setter for parent
         /// </summary>
@@ -34,7 +26,7 @@ namespace TreeExercise
             set { parent = value; }
         }
         /// <summary>
-        /// Getter and Setter for left
+        /// Getter and Setter for left node
         /// </summary>
         public Node Left
         {
@@ -42,7 +34,7 @@ namespace TreeExercise
             set { leftChild = value; }
         }
         /// <summary>
-        /// Getter and Setter for right
+        /// Getter and Setter for right node
         /// </summary>
         public Node Right
         {
@@ -57,5 +49,40 @@ namespace TreeExercise
             get { return value; }
             set { this.value = value; }
         }
+        /// <summary>
+        /// Getter and Setter for right neighbors value
+        /// </summary>
+        public int RValue
+        {
+            get { return rightValue; }
+            set { rightValue = value; }
+        }
+        /// <summary>
+        /// Getter and Setter for left neighbors value
+        /// </summary>
+        public int LValue
+        {
+            get { return leftValue; }
+            set { leftValue = value; }
+        }
+        public Node()
+        {
+            parent = null;
+            leftChild = null;
+            rightChild = null;
+            value = 1;
+            leftValue = 0;
+            rightValue = 0;
+        }
+        public Node(Node parent, int value)
+        {
+            this.parent = parent;
+            leftChild = null;
+            rightChild = null;
+            this.value = value;
+            leftValue = 0;
+            rightValue = 0;
+        }
+
     }
 }
