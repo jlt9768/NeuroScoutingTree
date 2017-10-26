@@ -42,8 +42,44 @@ namespace TreeExercise
             //Loop through to the depth wanted for the tree and don't loop if depth is equal to 1
             while (cLevel <= depth && depth > 1)
             {
+                //Make the last 
+                last = currentLevel[0];
+                for (int i = 0; i < currentLevel.Count; i++)
+                {
+                    //Create the left child
+                    currentLevel[i].Left = new Node(currentLevel[i], currentLevel[i].Value + currentLevel[i].LValue);
+                    currentLevel[i].Left.LValue = last.Value;
+                    
+                    //The last created node is the left child of the current node 
+                    last = currentLevel[i].Left;
+                    //Add to the next level of nodes
+                    nextLevel.Add(last);
+                    //Create right node
+                    currentLevel[i].Right = new Node(currentLevel[i], currentLevel[i].Value + currentLevel[i].RValue);
+                    last.RValue = currentLevel[i].Right.Value;
+                    currentLevel[i].Right.LValue = last.Value;
+                    last = currentLevel[i].Right;
+                    nextLevel.Add(last);
+                }
+                //Print out each node of the current level to the command line
+                foreach (Node n in nextLevel)
+                {
+                    Console.Write(n.Value + " ");
+                }
+                Console.WriteLine();
 
+                //Clear the current node list
+                currentLevel.Clear();
+
+                //Create a new list with the contents of next 
+                currentLevel = new List<Node>(nextLevel);
+
+                //Clear nextLevel
+                nextLevel.Clear();
+                //Increase to the next level
+                cLevel++;
             }
+            currentLevel.Clear();
         }
     }
 }
