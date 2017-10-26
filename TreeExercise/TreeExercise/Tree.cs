@@ -48,8 +48,18 @@ namespace TreeExercise
                 {
                     //Create the left child
                     currentLevel[i].Left = new Node(currentLevel[i], currentLevel[i].Value + currentLevel[i].LValue);
-                    currentLevel[i].Left.LValue = last.Value;
-                    
+                    //If it is the first node in the level set it's left to zero
+                    if (i == 0)
+                    {
+                        currentLevel[i].Left.LValue = 0;
+                    }
+                    //Else set the right neighbor value of the previously created node to the right child's value
+                    //And set the left neighbor value of the right child
+                    else
+                    {
+                        last.RValue = currentLevel[i].Left.Value;
+                        currentLevel[i].Left.LValue = last.Value;
+                    }
                     //The last created node is the left child of the current node 
                     last = currentLevel[i].Left;
                     //Add to the next level of nodes
