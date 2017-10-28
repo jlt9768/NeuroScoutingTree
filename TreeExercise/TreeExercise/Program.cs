@@ -12,7 +12,11 @@ namespace TreeExercise
         {
             Tree tree = new Tree();
             Console.WriteLine("Please enter the depth of the tree, needs to be greater than or equal to 1.");
-            int depth = Convert.ToInt32(Console.ReadLine());
+            int depth;
+            while(!int.TryParse(Console.ReadLine(),out depth) || depth < 1)
+            {
+                Console.WriteLine("Please enter the depth of the tree, needs to be greater than or equal to 1.");
+            }           
             tree.CreateTree(depth);
             Console.ReadLine();
         }

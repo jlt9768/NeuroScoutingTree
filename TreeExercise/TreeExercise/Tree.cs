@@ -20,11 +20,7 @@ namespace TreeExercise
         /// <param name="depth">How deep the tree is to go</param>
         public void CreateTree(int depth)
         {
-            while (depth < 1)
-            {
-                Console.WriteLine("Depth needs to be great than or equal to 1");
-                depth = Convert.ToInt32(Console.ReadLine());
-            }
+            
             //Current Level
             int cLevel = 2;
             //Current level of nodes within the tree
