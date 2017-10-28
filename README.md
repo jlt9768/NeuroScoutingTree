@@ -1,7 +1,7 @@
 # NeuroScoutingTree
 
 # How the code works
-These scripts work by creating a tree data structure with a depth defined by user input in the command window. The tree starts off with a root node and for each level of depth that is still needed to create it, it adds child nodes to each node at the current depth. It keeps track of neighboring nodes based on what the last created node at the current depth was and the node created after it. It continues this process til it reaches the user inputted depth.
+These scripts work by creating a tree data structure with a depth defined by user input in the command window. The tree starts off with a root node and for each level of depth that is still needed to create it, it adds child nodes to each node at the current depth. It keeps track of neighboring nodes based on what the last created node at the current depth was and the node created after it. It continues this process until it reaches the user inputted depth.
 
 # To compile and run 
 Either open up the sln file in visual studio and start the program. 
